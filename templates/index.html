@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Khata</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #eef5f0;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header {
+            background: #087f5b;
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            margin: 15px auto;
+            max-width: 500px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px #ccc;
+        }
+
+        button, select, input {
+            padding: 12px;
+            margin: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background: #087f5b;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🎤 VOICE KHATA</h1>
+    <h3>AI Powered Digital Ledger</h3>
+    <p>Speak • Track • Manage</p>
+</header>
+
+<div class="card">
+    <h2>📊 My Dashboard</h2>
+    <h3>Total Income: <span id="income">₹0</span></h3>
+    <h3>Total Expense: <span id="expense">₹0</span></h3>
+    <h3>Available Balance: <span id="balance">₹0</span></h3>
+</div>
+
+<div class="card">
+    <h2>🌍 Select Language</h2>
+
+    <select id="language">
+        <option value="kn-IN">Kannada</option>
+        <option value="en-IN">English</option>
+        <option value="hi-IN">Hindi</option>
+        <option value="ta-IN">Tamil</option>
+        <option value="te-IN">Telugu</option>
+        <option value="ml-IN">Malayalam</option>
+        <option value="mr-IN">Marathi</option>
+        <option value="bn-IN">Bengali</option>
+        <option value="gu-IN">Gujarati</option>
+        <option value="pa-IN">Punjabi</option>
+        <option value="ur-IN">Urdu</option>
+        <option value="or-IN">Odia</option>
+        <option value="as-IN">Assamese</option>
+        <option value="es-ES">Spanish</option>
+        <option value="fr-FR">French</option>
+        <option value="de-DE">German</option>
+        <option value="ja-JP">Japanese</option>
+        <option value="ar-SA">Arabic</option>
+        <option value="zh-CN">Chinese</option>
+    </select>
+</div>
+
+<div class="card">
+    <h2>🎙️ Voice Assistant</h2>
+
+    <button id="startBtn">🎤 Start Speaking</button>
+
+    <p id="status">Click to speak</p>
+
+    <h3>Recognized Speech</h3>
+    <p id="recognizedText">Your speech appears here</p>
+
+    <p id="result"></p>
+</div>
+
+<div class="card">
+    <h2>➕ Add Transaction</h2>
+
+    <input type="number" id="amount" placeholder="Enter Amount">
+
+    <input type="text" id="description" placeholder="Description">
+
+    <select id="type">
+        <option value="Income">Income</option>
+        <option value="Expense">Expense</option>
+    </select>
+
+    <br>
+
+    <button id="addBtn">Add Transaction</button>
+</div>
+
+<div class="card">
+    <h2>📋 Transaction History</h2>
+
+    <table width="100%">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Type</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+
+        <tbody id="transactionList"></tbody>
+    </table>
+
+    <button id="clearBtn">Clear History</button>
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

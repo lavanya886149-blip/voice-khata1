@@ -4,3 +4,4 @@ python-dotenv
 eventlet
 requests
 websocket-client
+gunicorn
